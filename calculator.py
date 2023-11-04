@@ -1,7 +1,7 @@
 from config import *  
 
 taxesToPay = marginalTaxRate = 0
-taxableIncome = W2INCOME - STANDARD_DEDUCTION #removing standard deduction
+taxableIncome = W2_INCOME - STANDARD_DEDUCTION #removing standard deduction
     
 
 for index in range(0,len(FED_TAX_INCOME_BUCKETS)): # go through each tax bracket
@@ -16,7 +16,7 @@ for index in range(0,len(FED_TAX_INCOME_BUCKETS)): # go through each tax bracket
     taxesToPay +=  (FED_TAX_INCOME_BUCKETS[index] * (FED_TAX_RATE[index] / 100)) #else add the tax from this bucket and move to the next one
 
 
-marginalTaxRate = (taxesToPay / W2INCOME) * 100
+marginalTaxRate = (taxesToPay / W2_INCOME) * 100
 print("You have a marginal tax rate of {:.2f}% and have to pay ${:,.2f} in taxes".format(marginalTaxRate, taxesToPay))   
 
 
