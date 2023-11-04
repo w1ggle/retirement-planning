@@ -13,9 +13,8 @@ FILING_STATUS = 1
 # Federal tax rates
 FED_TAX_RATE = [ 10, 12, 22, 24, 32, 35, 37]
 
-"""
-Federal tax rates and standard deduction based on filing status
-"""
+
+# Federal tax rates and standard deduction based on filing status
 match FILING_STATUS:
     case 1:
         FED_TAX_INCOME_BUCKETS = [ 11000, 44725, 95375, 182100, 231250, 578125, 999999999]
@@ -35,6 +34,8 @@ match FILING_STATUS:
         STANDARD_DEDUCTION = None
 
 
-
-# W-2 Income
-W2INCOME = 100000
+# Yearly Income Streams
+W2_INCOME = 100000
+PENSION_INCOME = 0
+SOCIAL_SECURITY_INCOME = 0
+ROTH_INCOME = 100000
