@@ -34,9 +34,16 @@ match FILING_STATUS:
         STANDARD_DEDUCTION = None
 
 
+
 # Yearly Income Streams
 W2_INCOME = 100000
-PENSION_INCOME = 0
+
+# FERS Pension calculator
+yearsOfService = 0
+pensionPercent = .01
+high3 = 0
+PENSION_INCOME = yearsOfService * pensionPercent * high3
+
 SOCIAL_SECURITY_INCOME = 0
 EMPLOYER_MATCH_INCOME = 0
 IRA_INCOME = 0
