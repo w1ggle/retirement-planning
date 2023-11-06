@@ -28,15 +28,15 @@ CAP_GAINS = 0
 
 
 # ALL THE TAX CALCULATIONS ARE BELOW
-# Tax rates
-FED_TAX = [0, 10, 12, 22, 24, 32, 35, 37]
-CAP_GAINS_TAX = [0, 0, 15, 20]
-SS_TAX = [0, 0, 50, 85]
+# Tax rates, added a 0 for the first element 
+FED_TAX = [10, 12, 22, 24, 32, 35, 37]
+CAP_GAINS_TAX = [0, 15, 20]
+SS_TAX = [0, 50, 85]
 
-# Federal tax rates and standard deduction based on filing status
+# Federal tax rates and standard deduction based on filing status, added 0 to start of tax buckets so subtraction for first bucket would not break code
 match FILING_STATUS:
     case 1:
-        FED_TAX_INCOME_BUCKETS = [0,  11000, 44725, 95375, 182100, 231250, 578125, 999999999]
+        FED_TAX_INCOME_BUCKETS = [0, 11000, 44725, 95375, 182100, 231250, 578125, 999999999]
         CAP_GAINS_TAX_INCOME_BUCKETS  = [44625, 492300, 999999999]
         SS_TAX_INCOME_BUCKETS = [25000, 34000, 999999999]
         STANDARD_DEDUCTION = 13850
