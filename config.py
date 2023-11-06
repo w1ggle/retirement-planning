@@ -10,13 +10,12 @@ Head of household = 4
 filingStatus = 1
 
 # ALL YEARLY INCOME STREAMS BELOW
-
 W2_INCOME = 100000
 
-# Do you have a pension? Yes(1) or no(0)?
+# Do you have a pension? Yes(1) or no(0)? can start as early as MRA (57) or wait until 62
 pensionStatus = 0
 
-if pensionStatus == 1:
+if pensionStatus == 1: 
     # FERS Pension calculator
     yearsOfService = 30
     pensionPercent = .01 # .01 or .011
@@ -27,7 +26,7 @@ else:
 
 
 
-SOCIAL_SECURITY_INCOME = 0  #can get start between 62 and 70
+SOCIAL_SECURITY_INCOME = 0 #can get start between 62 and 70
 
 
 MARKET_RATE_OF_RETURN_PERCENT = .06 

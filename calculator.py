@@ -3,7 +3,12 @@ from config import *
 incomeTaxesToPay = effectiveTaxRate = 0
 taxableIncome = TAXABLE_INCOME #removing standard deduction
 
+#fica tax
+if (taxableIncome - FICA_TAX_INCOME) < 0:
+    print("hello")
 
+incomeTaxesToPay = taxableIncome * FICA_TAX
+#income tax
 for index in range(1,len(FED_TAX_INCOME_BUCKETS)): # go through each tax bracket
     
     taxableIncome = taxableIncome - (FED_TAX_INCOME_BUCKETS[index] - FED_TAX_INCOME_BUCKETS[index - 1]) #remove the money from each bucket, moving up the buckets
