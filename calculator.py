@@ -4,10 +4,16 @@ incomeTaxesToPay = effectiveTaxRate = 0
 taxableIncome = TAXABLE_INCOME #removing standard deduction
 
 #fica tax
-if (taxableIncome - FICA_TAX_INCOME) < 0:
-    print("hello")
+if  taxableIncome - FICA_TAX_INCOME > 0:
+    incomeTaxesToPay = FICA_TAX_INCOME * FICA_TAX
+else:
+    print(taxableIncome)
+    incomeTaxesToPay = taxableIncome * FICA_TAX
+    
+print(incomeTaxesToPay)
 
-incomeTaxesToPay = taxableIncome * FICA_TAX
+
+
 #income tax
 for index in range(1,len(FED_TAX_INCOME_BUCKETS)): # go through each tax bracket
     
@@ -19,7 +25,8 @@ for index in range(1,len(FED_TAX_INCOME_BUCKETS)): # go through each tax bracket
         break
     
     incomeTaxesToPay +=  (FED_TAX_INCOME_BUCKETS[index] - FED_TAX_INCOME_BUCKETS[index - 1]) * (FED_TAX[index-1]) #else add the tax from this bucket and move to the next one
-   
+
+
 
 
 if ADJUSTED_GROSS_INCOME > 0:

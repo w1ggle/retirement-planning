@@ -51,6 +51,7 @@ FICA_TAX = .0765 #ignoring medicare tax after 200k
 
 # Federal tax rates and standard deduction based on filing status, added 0 to start of tax buckets so subtraction for first bucket would not break code
 FICA_TAX_INCOME = 160200
+
 match filingStatus:
     case 1:
         FED_TAX_INCOME_BUCKETS = [0, 11000, 44725, 95375, 182100, 231250, 578125, 999999999]
