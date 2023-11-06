@@ -16,9 +16,11 @@ for index in range(1,len(FED_TAX_INCOME_BUCKETS)): # go through each tax bracket
     incomeTaxesToPay +=  (FED_TAX_INCOME_BUCKETS[index] - FED_TAX_INCOME_BUCKETS[index - 1]) * (FED_TAX[index-1]) #else add the tax from this bucket and move to the next one
    
 
-    
 
-effectiveTaxRate = (incomeTaxesToPay / W2_INCOME) * 100
-print("You have an effective tax rate of {:.2f}% and have to pay ${:,.2f} in taxes".format(effectiveTaxRate, incomeTaxesToPay))   
+if ADJUSTED_GROSS_INCOME > 0:
+    effectiveTaxRate = (incomeTaxesToPay / ADJUSTED_GROSS_INCOME) * 100
+    print("You have an effective tax rate of {:.2f}% and have to pay ${:,.2f} in taxes".format(effectiveTaxRate, incomeTaxesToPay))   
+else:
+    print("You have no taxes to pay")
 
 
