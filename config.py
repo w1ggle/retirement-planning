@@ -7,6 +7,8 @@ Married filing separately = 3
 Head of household = 4
 """
 filingStatus = 1
+startYear = 59
+endYear = 92
 
 # ALL YEARLY INCOME STREAMS BELOW
 W2_INCOME = 0
@@ -104,3 +106,13 @@ TAXABLE_INCOME = ADJUSTED_GROSS_INCOME - STANDARD_DEDUCTION # standard deduction
 
 if TAXABLE_INCOME < 0: #if standard deduction is more than the AGI, then there is no taxable income
     TAXABLE_INCOME = 0
+    
+    
+    
+    
+numCols = 1
+planLength = endYear - startYear
+
+planArr[3][numCols] = {[1,2,3], [1,2,3],[1,2,3]}
+
+print(planArr)
